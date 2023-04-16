@@ -1,0 +1,11 @@
+:root {
+  margin: 0;
+  padding: 0;
+}
+
+html body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(94, 95, 151);
+  color: wheat;
+}

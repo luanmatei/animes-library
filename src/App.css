@@ -1,0 +1,11 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  display: flex;
+  margin: 0;
+  border: 0;
+  height: 100vh;
+}
