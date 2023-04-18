@@ -1,9 +1,4 @@
 import React, { useState, useEffect, startTransition } from 'react'
-import {
-    QueryClient,
-    QueryClientProvider,
-    useInfiniteQuery
-} from 'react-query'
 
 import { useSearchParams } from 'react-router-dom'
 import Card from '../components/Card'
@@ -19,37 +14,36 @@ const Search = () => {
 
     const [search, setSearch] = useState([])
     const [offset, setOffset] = useState(1)
-    const itensPerPage = 20
+    const itensPerPage = 10
     const [maxPages, setMaxPages] = useState(0)
-    const [scrollTracker, setScrollTracker] = useState(0)
+    
 
     const getSearch = async(url) => {
         const response = await fetch(url)
         const res = await response.json()          
         setSearch(res.data)
-        setMaxPages(res.meta.count)
+        setMaxPages(Math.ceil(res.meta.count/itensPerPage))
                 
     }
+    const scrollToStart = () => {
+        document.getElementsByClassName('container')[0].scrollTo(0,0)
+    }
     const handleNextPage = () => {
-        if((offset+itensPerPage) <= maxPages) {
+        if((Math.ceil(offset - itensPerPage/itensPerPage)) <= maxPages) {
             setOffset(offset + itensPerPage)
+            
 
         } 
     }
     const handlePreviousPage = () => {
         if(offset>itensPerPage) {
             setOffset(offset - itensPerPage)}
-            if(!scrollTracker) {
-                window.scrollTo(0,0) 
-                setScrollTracker(0)
-            } return        
+                         
     }
-    
-    const handleScroll = () => {
-        setScrollTracker(window.scrollY)
-        console.log(scrollTracker)
-    } 
-       
+    useEffect(()=>{
+        scrollToStart()
+    }, [offset])
+            
     useEffect(() => {        
         const searchWithQueryUrl = `${api}?filter[text]=${query}&page[limit]=${itensPerPage}&page[offset]=${offset}`
         getSearch(searchWithQueryUrl)                    
@@ -60,7 +54,7 @@ const Search = () => {
 
     return (
         
-        <div className='container' onScroll={handleScroll}>
+        <div className='container'>
             <h2 className='title'>Results for: 
                 <span className='query-text'>{query}</span>
             </h2>

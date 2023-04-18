@@ -9,7 +9,8 @@
     background-color:rgb(102, 103, 175);
     border: none;
     color: wheat;
-    text-decoration: none;    
+    text-decoration: none;
+    overflow-y: auto;    
 }
 
 .nav-bar-container a {    

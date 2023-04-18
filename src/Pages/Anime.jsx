@@ -12,9 +12,7 @@ const Anime = () => {
         const response= await fetch(url);
         const res = await response.json();
         setAnime(res.data);
-    }
-    
-    
+    }    
     useEffect(()=>{
         const animeDataUrl = `${animeUrl}/${id}`
         getAnime(animeDataUrl)
@@ -25,23 +23,21 @@ const Anime = () => {
             {anime != "" && 
                 <>
                     <h1>{anime.attributes.canonicalTitle}</h1>
+                    <span><button>Add to favorites</button> </span>
                     <div id='nova'>                                                
-                        <img className='poster' src={anime.attributes.posterImage.medium} alt={anime.attributes.slug} />     
-                        
+                        <img className='poster' src={anime.attributes.posterImage.medium} alt={anime.attributes.slug} />                    
                         <div className='info'>
                             <p>Age Rating: {anime.attributes.ageRatingGuide}</p>
                             <p>Start Date : {anime.attributes.startDate}</p>                            
-                            <p>End Date: {anime.attributes.endDate}</p>
-                            <p>Episode Count: {anime.attributes.episodeCount}</p>
+                            <p>End Date: {anime.attributes.endDate !=null ? anime.attributes.endDate: "Not finished"}</p>
+                            <p>Episode Count: {anime.attributes.episodeCount != null ? anime.attributes.episodeCount : "No value"}</p>
                             <p>Episode Length: {anime.attributes.episodeLength} min</p>
-                            <p>Show Type: {anime.attributes.showType}</p>
-                            <p>Subtype: {anime.attributes.subtype}</p>
+                            <p>Show Type: {anime.attributes.showType}</p>                            
                         </div>
                     </div>
-                    <p>Description: {anime.attributes.synopsis}</p>
+                    <text>{anime.attributes.synopsis}</text>
                 </>
-            }
-        
+            }        
         </div>
     )
 }

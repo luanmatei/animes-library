@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import "./Card.css"
 
-const Card = ({anime, showLink= true}) => {
+const Card = ({anime}) => {
     const navigate = useNavigate()
     const linkAnime = () => {
       navigate(`/anime/${anime.id}`)
@@ -16,7 +16,7 @@ const Card = ({anime, showLink= true}) => {
             </div>
             <div className='card-info'>
               {anime.attributes.canonicalTitle}
-              <span>Rating: {anime.attributes.averageRating}</span>              
+              <span>Rating: {anime.attributes.averageRating}</span>                           
             </div>
         </div> 
     
