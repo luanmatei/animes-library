@@ -11,8 +11,8 @@
 .container{
     display:flex;
     flex-direction: column;    
-    gap: 1.5rem;
-    padding: 2rem;
+    gap: .5rem;
+    padding: 0 1.5rem;
     background-color: rgb(94, 95, 151);
     color: wheat;
     overflow-y: auto;      
@@ -64,7 +64,7 @@
     overflow-y: auto;    
     font-size: x-large;   
 }
-.anime-page span {
+.anime-page .butao {
     display: flex;
     justify-content: end;
     padding-right: 2rem;

@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import AddRemoveFav from '../components/AddRemoveFav'
 import "./pages.css"
 
 const animeUrl = import.meta.env.VITE_API
 
 const Anime = () => {
-    const [anime, setAnime] = useState([])
-    const {id} = useParams()
+    const [anime, setAnime] = useState([])    
+    const {id} = useParams()   
 
     const getAnime = async (url) => {
         const response= await fetch(url);
@@ -16,14 +17,23 @@ const Anime = () => {
     useEffect(()=>{
         const animeDataUrl = `${animeUrl}/${id}`
         getAnime(animeDataUrl)
-    },[setAnime])
-
+    },[setAnime])    
+    
     return (
         <div className='anime-page'>   
             {anime != "" && 
                 <>
                     <h1>{anime.attributes.canonicalTitle}</h1>
-                    <span><button>Add to favorites</button> </span>
+                   {/*  {isFavoriteAlready() ? (
+                        <div className='butao'>
+                          <button onClick={handleOnRemoveFavorite}>Remove from favorites</button> 
+                        </div>
+                      ) : (
+                        <div className='butao'>
+                          <button onClick={handleOnAddFavorite}>Add to favorites</button> 
+                        </div>
+                      )} */}
+                      {<AddRemoveFav id={id}/>}
                     <div id='nova'>                                                
                         <img className='poster' src={anime.attributes.posterImage.medium} alt={anime.attributes.slug} />                    
                         <div className='info'>
@@ -35,7 +45,7 @@ const Anime = () => {
                             <p>Show Type: {anime.attributes.showType}</p>                            
                         </div>
                     </div>
-                    <text>{anime.attributes.synopsis}</text>
+                    <span>{anime.attributes.synopsis}</span>
                 </>
             }        
         </div>

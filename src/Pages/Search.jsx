@@ -14,7 +14,7 @@ const Search = () => {
 
     const [search, setSearch] = useState([])
     const [offset, setOffset] = useState(1)
-    const itensPerPage = 10
+    const itensPerPage = 20
     const [maxPages, setMaxPages] = useState(0)
     
 
@@ -23,23 +23,24 @@ const Search = () => {
         const res = await response.json()          
         setSearch(res.data)
         setMaxPages(Math.ceil(res.meta.count/itensPerPage))
-                
+        console.log(res.data)                
     }
+
     const scrollToStart = () => {
         document.getElementsByClassName('container')[0].scrollTo(0,0)
     }
+
     const handleNextPage = () => {
         if((Math.ceil(offset - itensPerPage/itensPerPage)) <= maxPages) {
-            setOffset(offset + itensPerPage)
-            
-
+            setOffset(offset + itensPerPage)     
         } 
     }
+
     const handlePreviousPage = () => {
         if(offset>itensPerPage) {
-            setOffset(offset - itensPerPage)}
-                         
+            setOffset(offset - itensPerPage)}                         
     }
+
     useEffect(()=>{
         scrollToStart()
     }, [offset])

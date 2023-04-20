@@ -8,18 +8,16 @@ const Card = ({anime}) => {
       navigate(`/anime/${anime.id}`)
     }
     
-    return (
-      
+    return (      
         <div key={anime.id} onClick={linkAnime}  className='card'>
             <div className='card-visual'>
-              <img src={anime.attributes.posterImage.small} alt={anime.attributes.slug} />              
+              <img id='poster' src={anime.attributes.posterImage.small} alt={anime.attributes.slug}/>              
             </div>
             <div className='card-info'>
               {anime.attributes.canonicalTitle}
-              <span>Rating: {anime.attributes.averageRating}</span>                           
+              <span>Rating: {anime.attributes.averageRating != null ? anime.attributes.averageRating : "Not rated"}</span>                           
             </div>
-        </div> 
-    
+        </div>    
     )
 }
 

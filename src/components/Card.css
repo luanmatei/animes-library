@@ -1,6 +1,6 @@
 .card {
     width: 284px;
-    height: 520px;
+    height: 424px;
     display: flex;    
     flex-direction: column;
     /* gap:  .5rem; */
@@ -11,6 +11,10 @@
     color: wheat;
     align-items: center;
     background-color: rgb(109, 110, 156)    
+}
+#poster {
+    width: 231.27px;
+    height: 326.5px;
 }
 
 .card:hover {
@@ -31,8 +35,8 @@
     padding: 0.3rem;
     display: flex;
     flex-direction: column;
-    font-size: 1.2rem;
-    line-height: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.2rem;
     gap: .5rem;
     flex:1;
     justify-content: center;

@@ -1,35 +1,43 @@
 import React, { useState, useEffect } from 'react'
 import Card from '../components/Card'
+import "./pages.css"
 
-const Favorites = () => {
-    const [favorites, setFavorites] = useState(() => {
-        const localFavorites = localStorage.getItem("ANIME")
-        if (localFavorites == null) return []
-        return JSON.parse(localFavorites)
-    })
-    const getAnime = async (url) => {
-      const response= await fetch(url);
-      const res = await response.json();
-      setAnime(res.data);
+const animeUrl = import.meta.env.VITE_API
+
+const Favorites = () => {    
+
+  const [favorites, setFavorites] = useState([])
+       
+   useEffect(() => {
+    const storedFavorites = localStorage.getItem("FAVORITES")
+    if(!storedFavorites) return
+
+    const storedFavoritesParse = JSON.parse(storedFavorites)    
+
+    const getAnimesById = async () => {
+      const animes = await Promise.all(storedFavoritesParse.map(async id => {
+        const response = await fetch(`${animeUrl}/${id}`);
+        const res = await response.json();
+        return res.data
+      }))
+      setFavorites(animes)
     }
-    useEffect(()=>{
-      const animeDataUrl = `${animeUrl}/${id}`
-      getAnime(animeDataUrl)
-    },[setAnime])    
+    getAnimesById()
+    
+   }, [])     
 
     return (
       <div className='container'>
             <h2 className='title'>Favorites:
             </h2>
             <div className='card-container' > 
-                {favorites.length===0 && <p>No favorites</p> }
-                {favorites.length > 0 && 
-                    search.map((anime) =><Card key={anime.id} anime={anime}/>)}
+                {/* {favorites.length===0 && <p>No favorites</p> } */}
+                {favorites?.map((anime) =><Card key={anime.id} anime={anime}/>)}
                
             </div> 
             <div className='buttons'>
-                    <button onClick={handlePreviousPage}>Previous Page</button>
-                    <button onClick={handleNextPage}>Next Page</button>
+                   {/*  <button onClick={handlePreviousPage}>Previous Page</button>
+                    <button onClick={handleNextPage}>Next Page</button> */}
             </div>    
         </div>
     )
