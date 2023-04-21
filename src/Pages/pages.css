@@ -64,22 +64,22 @@
     overflow-y: auto;    
     font-size: x-large;   
 }
-.anime-page .butao {
+/* .anime-page .butao {
     display: flex;
     justify-content: end;
     padding-right: 2rem;
-}
-.anime-page button{
+} */
+/* .anime-page button{
     background-color: transparent;
     border: none;
     padding: 1rem, 1rem;
     font-size: large;
     color: blue;
-}
-.anime-page button:hover{
+} */
+/* .anime-page button:hover{
     cursor: pointer;    
     transform: scale(150%);
-}
+} */
 .anime-page h1{
     display: flex;    
     width: 100%;

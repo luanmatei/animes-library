@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
-import "../Pages/pages.css"
+import { MdFavorite } from 'react-icons/md'
+
+import "./AddRemoveFav.css"
 
 const AddRemoveFav = ({id}) => {
   const [statusFavorites, setStatusFavorites] = useState(()=> {
@@ -31,14 +33,14 @@ const AddRemoveFav = ({id}) => {
     updateStatusFav()
   }
   return (
-    <div>
+    <div className='container'>
       {statusFavorites ? (
         <div className='butao'>
-          <button onClick={handleOnRemoveFavorite}>Remove from favorites</button> 
+          <button id='remove-button' onClick={handleOnRemoveFavorite}><MdFavorite size={50} color='red'/></button> 
         </div>
         ) : (
         <div className='butao'>
-          <button onClick={handleOnAddFavorite}>Add to favorites</button> 
+          <button id='add-button' onClick={handleOnAddFavorite}><MdFavorite size={50} color='green'/></button> 
         </div>)
       }
     </div>
