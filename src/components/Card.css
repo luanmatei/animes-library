@@ -10,7 +10,7 @@
     font-size: 1rem;
     color: wheat;
     align-items: center;
-    background-color: rgb(109, 110, 156)    
+    background-color: var(--dark-background-color)   
 }
 #poster {
     width: 231.27px;
@@ -40,8 +40,6 @@
     gap: .5rem;
     flex:1;
     justify-content: center;
-    
-    
 }
 
 .card-info span{

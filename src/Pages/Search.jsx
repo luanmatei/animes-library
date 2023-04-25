@@ -41,7 +41,7 @@ const Search = () => {
           setOffset(offset - itensPerPage)}                         
   }
   useEffect(()=>{
-      scrollToStart()
+      scrollTo(0,0)
   }, [offset])
           
   useEffect(() => {        

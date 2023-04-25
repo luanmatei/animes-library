@@ -9,13 +9,11 @@ const Favorites = () => {
   const [favorites, setFavorites] = useState([])
        
    useEffect(() => {
-    const storedFavorites = localStorage.getItem("FAVORITES")
-    if(!storedFavorites) return
-
-    const storedFavoritesParse = JSON.parse(storedFavorites)    
-
+  
     const getAnimesById = async () => {
-      const animes = await Promise.all(storedFavoritesParse.map(async id => {
+      const storedFavorites = JSON.parse(localStorage.getItem("FAVORITES"))
+      if(!storedFavorites) return  
+      const animes = await Promise.all(storedFavorites.map(async id => {
         const response = await fetch(`${animeUrl}/${id}`);
         const res = await response.json();
         return res.data

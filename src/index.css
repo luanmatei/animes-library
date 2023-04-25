@@ -1,11 +1,13 @@
 :root {
   margin: 0;
   padding: 0;
+  --dark-background-color: black;
+  --light-background-color: white;
 }
 
 html body {
   margin: 0;
   padding: 0;
-  background-color: rgb(94, 95, 151);
+  background-color: var(--dark-background-color);
   color: wheat;
 }

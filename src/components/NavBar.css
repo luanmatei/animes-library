@@ -6,7 +6,7 @@
     padding: 12px;
     min-width: 224px;    
     gap: .5rem;
-    background-color:rgb(102, 103, 175);
+    background-color:var(--dark-background-color);
     border: none;
     color: wheat;
     text-decoration: none;
@@ -16,12 +16,10 @@
 .nav-bar-container a {    
     text-decoration: none;
 }
-
 .nav-bar-container a:hover {
     font-size: 110%;
     transition: 300ms;
 }
-
 .home-logo {
     display: flex;
     align-items: center;

@@ -2,8 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center;    
 }
 .container-error h1 {
     padding: 30vh;
@@ -14,13 +13,13 @@
     gap: .5rem;
     padding: 0 1.5rem;
     background-color: rgb(94, 95, 151);
-    color: wheat;
-    overflow-y: auto;      
+    color: wheat;         
 }
 .container .title{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;    
 }
 .card-container {
     display: flex;
@@ -61,25 +60,9 @@
     flex-direction: column;
     padding: 0 2rem;
     gap: 1rem;
-    overflow-y: auto;    
+    /* overflow-y: auto; */    
     font-size: x-large;   
 }
-/* .anime-page .butao {
-    display: flex;
-    justify-content: end;
-    padding-right: 2rem;
-} */
-/* .anime-page button{
-    background-color: transparent;
-    border: none;
-    padding: 1rem, 1rem;
-    font-size: large;
-    color: blue;
-} */
-/* .anime-page button:hover{
-    cursor: pointer;    
-    transform: scale(150%);
-} */
 .anime-page h1{
     display: flex;    
     width: 100%;
@@ -90,7 +73,7 @@
     display: flex;
     gap: 2rem;
 }
-.poster {
+.poster{
     display: block;
     width: 390px;
     height: 554px;

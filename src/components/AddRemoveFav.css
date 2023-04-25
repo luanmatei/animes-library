@@ -1,29 +1,19 @@
 .container{  
-  background-color: transparent;
-  overflow: hidden;   
+  background-color: transparent;    
 }
 .butao {
-  display: flex;
-  justify-content: end;
-  background-color: transparent;    
+  display: flex;  
+  justify-content: end; 
 }
 .butao button{
   background-color: transparent;
   border-style: none;
-  position: absolute;
 }
 .butao svg{
-  cursor: pointer;
+  cursor: pointer;  
 }
 .butao svg:hover{
   cursor: pointer;
-  transform: scale(150%);    
-}
-
-#add-button :hover{
-  color: red;   
-}
-
-#remove-button :hover {
-  color: green;  
+  transform: scale(130%);
+  transition: 500ms; 
 }
