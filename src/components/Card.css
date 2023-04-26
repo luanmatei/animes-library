@@ -2,15 +2,14 @@
     width: 284px;
     height: 424px;
     display: flex;    
-    flex-direction: column;
-    /* gap:  .5rem; */
-    border-color: aliceblue;
+    flex-direction: column;    
+    border-color: var(--font-color);
     border-style:solid;
     border-width: 4px;
     font-size: 1rem;
-    color: wheat;
+    color: var(--font-color);
     align-items: center;
-    background-color: var(--dark-background-color)   
+    background-color: var(--background-color)   
 }
 #poster {
     width: 231.27px;
@@ -27,7 +26,7 @@
 .card-visual {
     display: flex;
     flex-direction: column;
-    border-bottom: 2px solid wheat;
+    border-bottom: 2px solid var(--font-color);
     margin-bottom: .3rem;    
 }
 
@@ -45,6 +44,6 @@
 .card-info span{
     margin: 0;
     padding: 0;
-    color: yellow;
+    color: red;
     font-size: 1rem;
 }

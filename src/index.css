@@ -1,13 +1,21 @@
-:root {
+*{
   margin: 0;
   padding: 0;
-  --dark-background-color: black;
-  --light-background-color: white;
 }
-
+:root { 
+  .light-theme{
+    --background-color: white;
+    --font-color: black;
+  } 
+  
+  .dark-theme{
+    --font-color: wheat;
+    --background-color: black;
+  }  
+}
 html body {
   margin: 0;
   padding: 0;
-  background-color: var(--dark-background-color);
-  color: wheat;
+  background-color: var(--background-color);
+  color: var(--font-color);
 }

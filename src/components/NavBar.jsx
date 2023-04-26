@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {BiSearchAlt2} from 'react-icons/bi'
+import ThemeToggle from './ThemeToggle'
+
 import "./NavBar.css"
 
 const NavBar = () => {
@@ -16,9 +18,9 @@ const NavBar = () => {
 
   return (
     <nav 
-      className='nav-bar-container'
-      >
+      className='nav-bar-container'>
         <div className='home-logo'>
+          <ThemeToggle/>
           <Link to="/">AniMerda</Link>
         </div>
         <form className="search-query" onSubmit={handleSubmit}>
@@ -28,7 +30,8 @@ const NavBar = () => {
               value={search}/>
           <button><BiSearchAlt2/></button>
         </form>
-        <ul className='nav-list'>          
+        <ul className='nav-list'>
+          <Link to="/">Home</Link>          
           <Link to="favorites">Favorites</Link>
         </ul>
         

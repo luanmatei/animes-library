@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div className='container'>
       <h1 className='title'>Trending Animes:        
-    </h1>
+      </h1>
     <div className='card-container'> 
         {search.length===0 && <p>Loading</p> }
         {search.length > 0 && 

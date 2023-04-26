@@ -10,10 +10,10 @@
 .container{
     display:flex;
     flex-direction: column;    
-    gap: .5rem;
+    gap: 1rem;
     padding: 0 1.5rem;
-    background-color: rgb(94, 95, 151);
-    color: wheat;         
+    background-color: var(--background-color);
+    color: var(--font-color);         
 }
 .container .title{
     display: flex;
@@ -22,8 +22,7 @@
     margin: 0;    
 }
 .card-container {
-    display: flex;
-    flex: 1;
+    display: flex;   
     flex-wrap: wrap;
     gap: 1.5rem;
     align-items: center;
@@ -44,7 +43,7 @@
     justify-content: center;
     border-radius: 10%;
     border: none;
-    color: wheat;
+    color: var(--font-color);
     background-color: rgb(53, 55, 194);
     font-size: .8rem; 
 }
@@ -59,7 +58,7 @@
     flex: 1;
     flex-direction: column;
     padding: 0 2rem;
-    gap: 1rem;
+    gap: 0.5rem;
     /* overflow-y: auto; */    
     font-size: x-large;   
 }

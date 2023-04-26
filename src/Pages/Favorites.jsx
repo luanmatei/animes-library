@@ -26,17 +26,12 @@ const Favorites = () => {
 
     return (
       <div className='container'>
-            <h2 className='title'>Favorites:
-            </h2>
+            <h1 className='title'>Favorites:
+            </h1>
             <div className='card-container' > 
                 {/* {favorites.length===0 && <p>No favorites</p> } */}
-                {favorites?.map((anime) =><Card key={anime.id} anime={anime}/>)}
-               
-            </div> 
-            <div className='buttons'>
-                   {/*  <button onClick={handlePreviousPage}>Previous Page</button>
-                    <button onClick={handleNextPage}>Next Page</button> */}
-            </div>    
+                {favorites?.map((anime) =><Card key={anime.id} anime={anime}/>)}               
+            </div>             
         </div>
     )
 }
