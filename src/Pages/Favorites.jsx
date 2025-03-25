@@ -29,7 +29,7 @@ const Favorites = () => {
             <h1 className='title'>Favorites:
             </h1>
             <div className='card-container' > 
-                {/* {favorites.length===0 && <p>No favorites</p> } */}
+                {favorites.length===0 && <h3>No favorites</h3> }
                 {favorites?.map((anime) =><Card key={anime.id} anime={anime}/>)}               
             </div>             
         </div>

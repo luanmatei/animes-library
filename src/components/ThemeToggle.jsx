@@ -13,7 +13,8 @@ const ThemeToggle = () => {
     else return "light"
   })
   
-  const toggleTheme = () => {    
+  const toggleTheme = () => {
+    document.body.classList.remove("light-theme", "dark-theme")    
     setTheme(theme === "dark" ? "light" : "dark")       
   }
   useEffect(()=>{        
