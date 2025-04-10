@@ -34,11 +34,8 @@ const NavBar = () => {
           <Link to="/">Home</Link>          
           <Link to="favorites">Favorites</Link>
         </ul>
-        
-        
-        
     </nav>
   )
 }
 
-export default NavBar
+export default NavBar;
